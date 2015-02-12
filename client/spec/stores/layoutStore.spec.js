@@ -14,16 +14,6 @@ describe( "layoutStore", function() {
 	} );
 
 	describe( "handlers", function() {
-		it( "should flag as loading after loadMessages", function() {
-			actionCreator.publishAction( "loadMessages" );
-			layoutStore.getLoading().should.be.ok;
-		} );
-		it( "should flag as not loading after messagesLoaded", function() {
-			actionCreator.publishAction( "loadMessages" );
-			layoutStore.getLoading().should.be.ok;
-			actionCreator.publishAction( "messagesLoaded", [] );
-			layoutStore.getLoading().should.not.be.ok;
-		} );
 		it( "should select the first message during the initial messagesLoaded", function() {
 			actionCreator.publishAction( "messagesLoaded", [ { id: 5 } ] );
 			layoutStore.getCurrentMessageId().should.equal( 5 );

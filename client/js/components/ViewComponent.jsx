@@ -12,7 +12,6 @@ define([
 	function getStateFromStores() {
 		var currentId = layoutStore.getCurrentMessageId();
 		return {
-			loading: layoutStore.getLoading(),
 			messages: messagesStore.getMessages(),
 			currentMessageId: currentId,
 			currentMessage: messagesStore.getMessage( currentId )
@@ -39,7 +38,6 @@ define([
 				<div className="container-fluid row">
 					<div className="col-sm-3">
 						<MessageList
-							loading={this.state.loading}
 							messages={this.state.messages}
 							currentMessageId={this.state.currentMessageId}
 							onSelectMessage={this.selectMessage }/>

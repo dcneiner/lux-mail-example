@@ -68,7 +68,7 @@ define( [ "lux.js", "lodash" ], function( lux, _ ) {
 			loadMessages: function() {
 				setTimeout( function() {
 					this.publishAction( "messagesLoaded", messages );
-				}.bind( this ), 2000 );
+				}.bind( this ), 0 );
 			}
 		}
 	} );

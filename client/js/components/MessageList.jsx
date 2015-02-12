@@ -33,15 +33,10 @@ define([
 					</a>;
 			}, this	);
 		},
-		renderLoading: function () {
-			return <div className="well">
-				<i className="fa fa-spin fa-spinner"></i> Loading messages…
-			</div>;
-		},
 		render: function () {
 			return (
 				<div className="list-group">
-					{ this.props.loading ? this.renderLoading() : this.renderMessages() }
+					{ this.renderMessages() }
 				</div>
 			);
 		}

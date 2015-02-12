@@ -5,16 +5,11 @@ define( [
 				namespace: "layout",
 				state: {
 					currentMessageId: null,
-					loading: false,
 				},
 				handlers: {
-					loadMessages: function() {
-						this.setState( { loading: true } );
-					},
 					messagesLoaded: function( messages ) {
 						var currentMessageId = this.getState().currentMessageId;
 						this.setState( {
-							loading: false,
 							currentMessageId: currentMessageId || ( messages[ 0 ] ? messages[ 0 ].id : null )
 						} );
 					},
@@ -37,9 +32,6 @@ define( [
 				},
 				getCurrentMessageId: function() {
 					return this.getState().currentMessageId;
-				},
-				getLoading: function() {
-					return this.getState().loading;
 				}
 			} );
 	} );
